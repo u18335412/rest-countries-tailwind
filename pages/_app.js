@@ -1,8 +1,15 @@
-import 'tailwindcss/tailwind.css'
+import "tailwindcss/tailwind.css";
+import Head from "next/head";
 
+const getStaticProps = async () => {
+  return {
+    props: [],
+  };
+};
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  //console.log(pageProps);
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
