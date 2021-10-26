@@ -2,6 +2,7 @@ import { useState } from "react";
 import NavbarEx from "../src/components/layout/Navbar";
 import SearchSection from "../src/components/SearchBar";
 import { getAllData } from "../src/data/data";
+import { useRouter } from "next/router";
 
 export const getStaticProps = async (context) => {
   const data = await getAllData();
@@ -11,6 +12,7 @@ export const getStaticProps = async (context) => {
 };
 
 const Home = ({ countries }) => {
+  const router = useRouter();
   const CountryComponent = ({ countries }) => {
     return (
       <>
@@ -21,6 +23,9 @@ const Home = ({ countries }) => {
               <div
                 key={idx}
                 className=" h-5/6 mb-5 flex flex-col shadow-lg pb-10 mt-5 w-12/12 md:w-3/3 lg:w-4/4"
+                onClick={() => {
+                  router.push(c.name.common);
+                }}
               >
                 <div>
                   <img src={c.flags.svg} className="rounded-t-lg"></img>
