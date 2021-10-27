@@ -9,10 +9,15 @@ export async function getAllCountriesId() {
 }
 
 export async function getCountryData(name) {
-  const data = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+  const data = await fetch(
+    encodeURI(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
+  );
   const country = await data.json();
-  const array =
-    typeof country[0].borders === "undefined" ? [] : country[0].borders;
+  let array = [];
+  if (country.hasOwnProperty("borders") === true) {
+    array = typeof country[0].borders === "undefined" ? [] : country[0].borders;
+  }
+
   let neighbors = [
     {
       name: {
@@ -20,9 +25,9 @@ export async function getCountryData(name) {
       },
     },
   ];
+
   if (array.length > 0) neighbors = await getCountryNeighbors(array.toString());
   country[0].neighbors = neighbors;
-  console.log(country[0].neighbors);
   return {
     name,
     ...country[0],

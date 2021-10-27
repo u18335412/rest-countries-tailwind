@@ -45,6 +45,7 @@ export default function country({ countryData }) {
               <p className=" font-semibold">
                 Native Name:
                 <span className="text-sm font-normal">
+                
                   {Object.keys(countryData.name.nativeName).map((c, idx) => {
                     return (
                       <span key={idx} className="mr-1">
@@ -88,13 +89,14 @@ export default function country({ countryData }) {
               </p>
               <p className=" font-semibold">
                 Currencies:
-                {Object.keys(countryData.currencies).map((c, idx) => {
-                  return (
-                    <span className="ml-2" key={idx}>
-                      {countryData.currencies[`${c}`].name}
-                    </span>
-                  );
-                })}
+                {countryData.currencies &&
+                  Object.keys(countryData.currencies).map((c, idx) => {
+                    return (
+                      <span className="ml-2" key={idx}>
+                        {countryData.currencies[`${c}`].name}
+                      </span>
+                    );
+                  })}
               </p>
               <p>
                 <span className=" font-semibold">Languages:</span>
