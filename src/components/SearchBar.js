@@ -32,7 +32,7 @@ const SearchSection = (props) => {
           </button>
           <nav
             tabIndex="0"
-            className={`border-2 ring-0 dark:bg-grayishDarkBlue ${visible}  w-full rounded absolute left-0 top-full transition-all opacity-0 group-focus-within:${visible} group-focus-within:opacity-100 group-focus-within:translate-y-1 shadow-2xl`}
+            className={`border-2 ring-0 dark:bg-grayishDarkBlue ${visible}  w-full rounded absolute left-0 top-full transition-all opacity-0 group-focus-within:${!visible} group-focus-within:opacity-100 group-focus-within:translate-y-1 shadow-2xl`}
           >
             <ul className="py-1 bg-white dark:bg-grayishDarkBlue">
               <li

@@ -22,12 +22,10 @@ const Home = ({ countries }) => {
 
   const handleChange = (value) => {
     setSearchValue(value);
-  }
+  };
 
   const CountryComponent = ({ countries }) => {
-
     return (
-      
       <>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,8 +37,7 @@ const Home = ({ countries }) => {
         </Head>
         <section className="mt-5  gap-x-24 grid place-items-center md:grid-cols-3 lg:grid-cols-4">
           {countries.map((c, idx) => {
-            if (c.name.common.includes(searchValue) === false)
-              return;
+            if (c.name.common.includes(searchValue) === false) return;
             const capitals = c.capital;
             if (
               region === "none" ||
@@ -54,10 +51,12 @@ const Home = ({ countries }) => {
                     router.push(c.name.common);
                   }}
                 >
-                  <img
-                    src={c.flags.png}
-                    className=" rounded-t-sm object-cover  h-52 w-80  "
-                  ></img>
+                  <div>
+                    <img
+                      src={c.flags.svg}
+                      className=" rounded-t-lg object-cover w-72 h-40"
+                    ></img>
+                  </div>
                   <div className="pt-5 pl-5  h-full">
                     <label className="font-bold">{c.name.common}</label>
                     <div className="mt-2">
