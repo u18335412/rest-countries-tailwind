@@ -21,27 +21,25 @@ export default function country({ countryData }) {
   const capitals = countryData.capital;
   const tld = countryData.tld;
   return (
-    <div className="px-5 lg:px-60">
+    <div className="px-5 xl:px-60 pt-10 dark:bg-veryDarkBlue h-screen dark:text-white">
       <Link href="/" passHref>
-        <button className="px-5 py-2 mt-20 rounded flex items-center shadow-md hover:ring ring-green-100">
+        <button className="px-5 py-2  rounded flex  dark:bg-grayishDarkBlue  items-center shadow-md hover:ring ring-green-100">
           <BsArrowLeft></BsArrowLeft>
           <span className="px-5">Back</span>
         </button>
       </Link>
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2">
-        <div className="bg-indigo-500 max-h-full">
-          <img
-            className=" object-cover h-full w-full"
-            src={countryData.flags.svg}
-            alt="country flag"
-          ></img>
-        </div>
-        <div className="lg:pl-16 lg:pt-16 lg:pb-0 md:p-4 pt-7">
+        <img
+          className=" object-cover h-full w-full max-h-96"
+          src={countryData.flags.png}
+          alt="country flag"
+        ></img>
+        <div className="xl:pl-16 xl:pb-0 md:p-4 pt-7 flex flex-col justify-center">
           <p className="text-2xl mb-5 md font-bold">
             {countryData.name.common}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 ">
+            <div className="flex flex-col gap-2 ">
               <p className=" font-semibold">
                 Native Name:
                 <span className="text-sm font-normal">
@@ -73,41 +71,47 @@ export default function country({ countryData }) {
                 {capitals === undefined ? "" : ` ${capitals.toString()}`}
               </p>
             </div>
-            <div className="flex flex-col gap-2 mt-10 md:mt-0">
-              <p className=" font-semibold">
-                Top Level Domain:
-                <span className="text-sm font-normal">
-                  {tld === undefined ? "" : ` ${tld.toString()}`}
-                </span>
-              </p>
-              <p className=" font-semibold">
-                Currencies:
-                {countryData.currencies &&
-                  Object.keys(countryData.currencies).map((c, idx) => {
-                    return (
-                      <span className="ml-2" key={idx}>
-                        {countryData.currencies[`${c}`].name}
-                      </span>
-                    );
-                  })}
-              </p>
-              <p>
-                <span className=" font-semibold">Languages:</span>
-                {countryData.languages &&
-                  Object.keys(countryData.languages).map((c, idx) => {
-                    if (idx === Object.keys(countryData.languages).length - 1)
-                      <span key={idx * 1000}>{` ${
-                        countryData.languages[`${c}`]
-                      }`}</span>;
-                    else
-                      <span key={idx * 10000}>{` ${
-                        countryData.languages[`${c}`]
-                      }, `}</span>;
-                  })}{" "}
-              </p>
+            <div className="mt-10 md:mt-0">
+              <div className=" flex gap-2 flex-col  md:float-right xl:float-none">
+                <p className=" font-semibold">
+                  Top Level Domain:
+                  <span className="text-sm font-normal">
+                    {tld === undefined ? "" : ` ${tld.toString()}`}
+                  </span>
+                </p>
+                <p className=" font-semibold">
+                  Currencies:
+                  {countryData.currencies &&
+                    Object.keys(countryData.currencies).map((c, idx) => {
+                      return (
+                        <span className="ml-2 font-normal" key={idx}>
+                          {countryData.currencies[`${c}`].name}
+                        </span>
+                      );
+                    })}
+                </p>
+                <p>
+                  <span className=" font-semibold pr-1">Languages:</span>
+                  {countryData.languages &&
+                    Object.keys(countryData.languages).map((c, idx) => {
+                      if (idx === Object.keys(countryData.languages).length - 1)
+                        return (
+                          <span key={idx}>{`${
+                            countryData.languages[`${c}`]
+                          }`}</span>
+                        );
+                      else
+                        return (
+                          <span key={idx}>{`${
+                            countryData.languages[`${c}`]
+                          }, `}</span>
+                        );
+                    })}{" "}
+                </p>
+              </div>
             </div>
           </div>
-          <div className="mt-10 flex flex-wrap items-center">
+          <div className="mt-10 flex flex-wrap items-center ">
             <span className="font-semibold mr-2 w-full md:w-auto">
               Bordered Countries:
             </span>
@@ -117,9 +121,9 @@ export default function country({ countryData }) {
                   href={`/${c.name.common}`}
                   passHref
                   key={idx}
-                  className="inline"
+                  className="inline "
                 >
-                  <span className="px-5 py-3 shadow-md mr-2 cursor-pointer hover:shadow-xl">
+                  <span className="dark:bg-grayishDarkBlue text-sm px-3 py-1 shadow-md mr-2 cursor-pointer hover:shadow-xl rounded-md">
                     {c.name.common}
                   </span>
                 </Link>

@@ -14,9 +14,10 @@ export async function getCountryData(name) {
   );
   const country = await data.json();
   let array = [];
-  if (country.hasOwnProperty("borders") === true) {
+  if (country[0].hasOwnProperty("borders") === true) {
     array = typeof country[0].borders === "undefined" ? [] : country[0].borders;
   }
+
 
   let neighbors = [
     {
