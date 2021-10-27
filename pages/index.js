@@ -56,9 +56,9 @@ const Home = ({ countries }) => {
                 >
                   <img
                     src={c.flags.png}
-                    className="rounded-t-lg object-cover  h-52 w-80 "
+                    className=" rounded-t-sm object-cover  h-52 w-80  "
                   ></img>
-                  <div className="mt-5 ml-5">
+                  <div className="pt-5 pl-5  h-full">
                     <label className="font-bold">{c.name.common}</label>
                     <div className="mt-2">
                       <span className=" font-semibold text-sm mr-2">
@@ -91,7 +91,7 @@ const Home = ({ countries }) => {
   };
   return (
     <>
-      <div className="px-5 lg:px-60 dark:bg-veryDarkBlue dark:text-white">
+      <div className="px-5 lg:px-60 dark:bg-veryDarkBlue dark:text-white min-h-screen">
         <SearchSection
           toggle={toggle}
           input={searchValue}
