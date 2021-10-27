@@ -45,14 +45,7 @@ export default function country({ countryData }) {
               <p className=" font-semibold">
                 Native Name:
                 <span className="text-sm font-normal">
-                
-                  {Object.keys(countryData.name.nativeName).map((c, idx) => {
-                    return (
-                      <span key={idx} className="mr-1">
-                        {` ${countryData.name.nativeName[`${c}`].common}`}
-                      </span>
-                    );
-                  })}
+                  <span className="mr-1">{` ${countryData.name.common}`}</span>
                 </span>
               </p>
               <p className=" font-semibold ">
@@ -72,7 +65,7 @@ export default function country({ countryData }) {
               <p className=" font-semibold">
                 Subregion:
                 <span className="text-sm font-normal">
-                  {` ${countryData.subregion}`}
+                  {countryData.subregion && ` ${countryData.subregion}`}
                 </span>
               </p>
               <p>
@@ -100,20 +93,17 @@ export default function country({ countryData }) {
               </p>
               <p>
                 <span className=" font-semibold">Languages:</span>
-                {Object.keys(countryData.languages).map((c, idx) => {
-                  if (idx === Object.keys(countryData.languages).length - 1)
-                    return (
+                {countryData.languages &&
+                  Object.keys(countryData.languages).map((c, idx) => {
+                    if (idx === Object.keys(countryData.languages).length - 1)
                       <span key={idx * 1000}>{` ${
                         countryData.languages[`${c}`]
-                      }`}</span>
-                    );
-                  else
-                    return (
+                      }`}</span>;
+                    else
                       <span key={idx * 10000}>{` ${
                         countryData.languages[`${c}`]
-                      }, `}</span>
-                    );
-                })}{" "}
+                      }, `}</span>;
+                  })}{" "}
               </p>
             </div>
           </div>
