@@ -20,11 +20,6 @@ export async function getStaticProps({ params }) {
 export default function country({ countryData }) {
   const capitals = countryData.capital;
   const tld = countryData.tld;
-  console.log(
-    Object.keys(countryData.name.nativeName).map((c) => {
-      return JSON.stringify(countryData.name.nativeName[`${c}`].common);
-    })
-  );
   return (
     <div className="px-5 lg:px-60">
       <Link href="/" passHref>

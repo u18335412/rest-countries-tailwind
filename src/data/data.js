@@ -11,10 +11,18 @@ export async function getAllCountriesId() {
 export async function getCountryData(name) {
   const data = await fetch(`https://restcountries.com/v3.1/name/${name}`);
   const country = await data.json();
-  const array = country[0].borders;
-  const neighbors = await getCountryNeighbors(array.toString());
+  const array =
+    typeof country[0].borders === "undefined" ? [] : country[0].borders;
+  let neighbors = [
+    {
+      name: {
+        common: "No Neighbor",
+      },
+    },
+  ];
+  if (array.length > 0) neighbors = await getCountryNeighbors(array.toString());
   country[0].neighbors = neighbors;
-  
+  console.log(country[0].neighbors);
   return {
     name,
     ...country[0],
