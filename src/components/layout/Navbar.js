@@ -2,7 +2,7 @@ import { HiOutlineMoon } from "react-icons/hi";
 
 const Navbar = () => (
   <>
-    <section className="flex text-xs md:text-base justify-between items-center justify-items-center  mt-3">
+    <section className="px-5 lg:px-60 shadow-md flex text-xs md:text-base justify-between items-center justify-items-center  mt-3">
       <div>
         <label className="font-bold text-xs font-bold md:text-xl">
           Where in the world?

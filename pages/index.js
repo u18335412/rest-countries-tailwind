@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NavbarEx from "../src/components/layout/Navbar";
+
 import SearchSection from "../src/components/SearchBar";
 import { getAllData } from "../src/data/data";
 import { useRouter } from "next/router";
@@ -56,8 +56,7 @@ const Home = ({ countries }) => {
   };
   return (
     <>
-      <div className="px-5 lg:px-40">
-        <NavbarEx></NavbarEx>
+      <div className="px-5 lg:px-60">
         <SearchSection></SearchSection>
         <CountryComponent countries={countries}></CountryComponent>
       </div>
