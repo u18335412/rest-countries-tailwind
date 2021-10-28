@@ -3,7 +3,7 @@ import { MdOutlineLightMode } from "react-icons/md";
 const Navbar = (props) => {
   return (
     <>
-      <section className=" dark:bg-grayishDarkBlue dark:text-white px-5 xl:px-60  shadow-md flex text-xs md:text-base justify-between items-center justify-items-center  py-3">
+      <section className=" dark:bg-grayishDarkBlue dark:text-white px-5 2xl:px-60  shadow-md flex text-xs md:text-base justify-between items-center justify-items-center  py-3">
         <div>
           <label className=" font-bold text-xs font-bold md:text-xl">
             Where in the world?

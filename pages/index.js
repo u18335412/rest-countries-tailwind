@@ -90,7 +90,7 @@ const Home = ({ countries }) => {
   };
   return (
     <>
-      <div className="px-5 lg:px-60 dark:bg-veryDarkBlue dark:text-white min-h-screen">
+      <div className="px-5 2xl:px-60 dark:bg-veryDarkBlue dark:text-white min-h-screen">
         <SearchSection
           toggle={toggle}
           input={searchValue}
