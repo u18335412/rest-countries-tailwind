@@ -21,7 +21,7 @@ export default function country({ countryData }) {
   const capitals = countryData.capital;
   const tld = countryData.tld;
   return (
-    <div className="px-5 xl:px-60 pt-10 dark:bg-veryDarkBlue h-screen dark:text-white">
+    <div className="px-5 xl:px-60 pt-10 dark:bg-veryDarkBlue dark:text-white min-h-screen max-h-full">
       <Link href="/" passHref>
         <button className="px-5 py-2  rounded flex  dark:bg-grayishDarkBlue  items-center shadow-md hover:ring ring-green-100">
           <BsArrowLeft></BsArrowLeft>
@@ -111,7 +111,7 @@ export default function country({ countryData }) {
               </div>
             </div>
           </div>
-          <div className="mt-10 flex flex-wrap items-center ">
+          <div className="mt-10 flex flex-wrap items-center dark:bg-veryDarkBlue">
             <span className="font-semibold mr-2 w-full md:w-auto">
               Bordered Countries:
             </span>
@@ -123,7 +123,7 @@ export default function country({ countryData }) {
                   key={idx}
                   className="inline "
                 >
-                  <span className="dark:bg-grayishDarkBlue text-sm px-3 py-1 shadow-md mr-2 cursor-pointer hover:shadow-xl rounded-md">
+                  <span className="dark:bg-grayishDarkBlue mt-1 text-sm px-3 py-1 shadow-md mr-2 cursor-pointer hover:shadow-xl rounded-md">
                     {c.name.common}
                   </span>
                 </Link>

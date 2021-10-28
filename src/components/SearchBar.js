@@ -8,7 +8,7 @@ const SearchSection = (props) => {
     p.update(e.target.value);
   };
 
-  const handleSelect = () => {
+  const handleSelect = (e) => {
     visible === "visible" ? setVisible("invisible") : setVisible("visible");
   };
 
@@ -25,14 +25,17 @@ const SearchSection = (props) => {
         ></input>
       </div>
       <div className="md:justify-end items-center col-span-1">
-        <div className="group relative pl-0"onClick={() => handleSelect()} >
-          <button  className="flex items-center px-4 rounded-md dark:bg-grayishDarkBlue  h-12 gap-5 shadow-md hover:ring ring-green-100">
+        <div className="group relative pl-0">
+          <button
+            onClick={() => handleSelect()}
+            className="flex items-center px-4 rounded-md dark:bg-grayishDarkBlue  h-12 gap-5 shadow-md hover:ring ring-green-100"
+          >
             Filter by Region
             <HiChevronDown></HiChevronDown>
           </button>
           <nav
             tabIndex="0"
-            className={`border-2 ring-0 dark:bg-grayishDarkBlue ${visible}  w-full rounded absolute left-0 top-full transition-all opacity-0 group-focus-within:${!visible} group-focus-within:opacity-100 group-focus-within:translate-y-1 shadow-2xl`}
+            className={`border-2 ring-0  dark:bg-grayishDarkBlue w-full rounded absolute left-0 top-full transition-all opacity-0 ${visible} group-focus-within:opacity-100 `}
           >
             <ul className="py-1 bg-white dark:bg-grayishDarkBlue">
               <li
@@ -95,6 +98,18 @@ const SearchSection = (props) => {
                   className="block px-4 py-1 hover:bg-gray-100 dark:hover:text-black"
                 >
                   Oceania
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onClick={() => {
+                    handleSelect();
+                    props.toggle("none");
+                  }}
+                  className="block px-4 py-1 pb-0 hover:bg-gray-100 dark:hover:text-black"
+                >
+                  None
                 </a>
               </li>
             </ul>
