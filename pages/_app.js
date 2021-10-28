@@ -1,7 +1,7 @@
 import "tailwindcss/tailwind.css";
 import Head from "next/head";
 import Navbar from "../src/components/layout/Navbar";
-
+import cookieCutter from 'cookie-cutter'
 import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
 
   const toggleTheme = () => {
     theme === "dark" ? setTheme("light") : setTheme("dark");
-  }
+  };
 
   return (
     <div className={theme}>
