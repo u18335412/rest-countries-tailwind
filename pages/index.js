@@ -28,6 +28,7 @@ const Home = ({ countries }) => {
     return (
       <>
         <Head>
+          <title>Countries</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
@@ -35,7 +36,7 @@ const Home = ({ countries }) => {
             rel="stylesheet"
           />
         </Head>
-        <section className="mt-5  gap-x-24 grid place-items-center md:grid-cols-3 lg:grid-cols-4">
+        <section className="mt-5 gap-20 grid place-items-center md:grid-cols-3 lg:grid-cols-4 ">
           {countries.map((c, idx) => {
             if (c.name.common.includes(searchValue) === false) return;
             const capitals = c.capital;
@@ -46,7 +47,7 @@ const Home = ({ countries }) => {
               return (
                 <div
                   key={idx}
-                  className="dark:bg-grayishDarkBlue cursor-pointer hover:shadow-xl h-5/6 mb-5 flex flex-col shadow-lg pb-10 mt-5 w-12/12 md:w-3/3 lg:w-4/4"
+                  className="dark:bg-grayishDarkBlue cursor-pointer hover:shadow-xl  h-5/6 mb-5 flex flex-col shadow-lg pb-10 mt-5 w-12/12 md:w-3/3 lg:w-4/4"
                   onClick={() => {
                     router.push(c.name.common);
                   }}
@@ -55,6 +56,7 @@ const Home = ({ countries }) => {
                     <img
                       src={c.flags.svg}
                       className=" rounded-t-lg object-cover w-72 h-40"
+                      alt={`${c.name.common} flag`}
                     ></img>
                   </div>
                   <div className="pt-5 pl-5  h-full">
@@ -90,7 +92,7 @@ const Home = ({ countries }) => {
   };
   return (
     <>
-      <div className="px-5 2xl:px-60 dark:bg-veryDarkBlue dark:text-white min-h-screen">
+      <div className="px-5 2xl:px-28 dark:bg-veryDarkBlue dark:text-white min-h-screen">
         <SearchSection
           toggle={toggle}
           input={searchValue}
