@@ -38,7 +38,7 @@ const Home = ({ countries }) => {
         </Head>
         <section className="mt-5 gap-x-20 grid place-items-center md:grid-cols-3 lg:grid-cols-4 ">
           {countries.map((c, idx) => {
-            if (c.name.common.includes(searchValue) === false) return;
+            if (c.name.common.toLowerCase().includes(searchValue.toLocaleLowerCase()) === false) return;
             const capitals = c.capital;
             if (
               region === "none" ||

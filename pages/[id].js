@@ -21,7 +21,7 @@ export default function country({ countryData }) {
   const capitals = countryData.capital;
   const tld = countryData.tld;
   return (
-    <div className="px-5 2xl:px-28 pt-10 dark:bg-veryDarkBlue dark:text-white min-h-screen max-h-full">
+    <div className="px-5 2xl:px-28 pt-10 dark:bg-veryDarkBlue dark:text-white min-h-screen max-h-full ">
       <Link href="/" passHref>
         <button className="px-5 py-2  rounded flex  dark:bg-grayishDarkBlue  items-center shadow-md hover:ring ring-green-100">
           <BsArrowLeft></BsArrowLeft>
