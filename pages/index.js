@@ -46,21 +46,21 @@ const Home = ({ countries }) => {
               (region !== "none" && c.region === region)
             ) {
               return (
-                <div
-                  key={idx}
-                  className="dark:bg-grayishDarkBlue cursor-pointer hover:shadow-xl  h-5/6 mb-5 flex flex-col shadow-lg pb-10 mt-5 w-12/12 md:w-3/3 lg:w-4/4"
-                  onClick={() => {
-                    router.push(c.name.common);
-                  }}
-                >
-                  <Link href={`/${c.name.common}`} passHref>
+                <Link href={`/${c.name.common}`}>
+                  <div
+                    key={idx}
+                    className="dark:bg-grayishDarkBlue cursor-pointer hover:shadow-xl  h-5/6 mb-5 flex flex-col shadow-lg pb-10 mt-5 w-12/12 md:w-3/3 lg:w-4/4"
+
+                  >
                     <>
                       <div>
+
                         <img
                           src={c.flags.svg}
-                          className=" rounded-t-lg object-cover w-72 h-40"
+                          className=" rounded-t-lg object-cover w-80 h-44"
                           alt={`${c.name.common} flag`}
                         ></img>
+
                       </div>
                       <div className="pt-5 pl-5  h-full">
                         <label className="font-bold">{c.name.common}</label>
@@ -86,8 +86,8 @@ const Home = ({ countries }) => {
                         </div>
                       </div>
                     </>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               );
             }
           })}

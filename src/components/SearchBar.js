@@ -14,7 +14,7 @@ const SearchSection = (props) => {
 
   return (
     <div className="pt-10 flex flex-col md:flex-row gap-10  md:justify-between">
-      <div className="flex pl-5 h-12 w-full md:w-96 dark:bg-grayishDarkBlue items-center rounded-md shadow-md">
+      <div className="flex pl-5 h-12 w-full md:w-[23rem] xl:w-[36rem] dark:bg-grayishDarkBlue items-center rounded-md shadow-md">
         <HiOutlineSearch></HiOutlineSearch>
         <input
           className="focus:outline-none pl-5 pr-0 w-full dark:bg-grayishDarkBlue"
