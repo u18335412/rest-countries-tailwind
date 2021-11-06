@@ -49,7 +49,7 @@ const Home = ({ countries }) => {
                 <Link href={`/${c.name.common}`}>
                   <div
                     key={idx}
-                    className="dark:bg-grayishDarkBlue cursor-pointer hover:shadow-xl  h-5/6 mb-5 flex flex-col shadow-lg pb-10 mt-5 w-12/12 md:w-3/3 lg:w-4/4"
+                    className="rounded-t-lg dark:bg-grayishDarkBlue cursor-pointer hover:shadow-xl  h-5/6 mb-5 flex flex-col shadow-lg pb-10 mt-5 w-12/12 md:w-3/3 lg:w-4/4"
 
                   >
                     <>
