@@ -53,7 +53,7 @@ const Home = ({ countries }) => {
                     router.push(c.name.common);
                   }}
                 >
-                  <Link href={`/${c.name.common}`}>
+                  <Link href={`/${c.name.common}`} passHref>
                     <>
                       <div>
                         <img

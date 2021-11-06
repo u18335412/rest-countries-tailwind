@@ -31,7 +31,7 @@ export default function country({ countryData }) {
 
       <div className=" mt-20 grid grid-cols-1 md:grid-cols-2">
         <img
-          className=" object-cover h-full w-full"
+          className=" object-cover h-full w-full max-h-96"
           src={countryData.flags.svg}
           alt="country flag"
         ></img>
