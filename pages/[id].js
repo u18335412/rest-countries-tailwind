@@ -28,9 +28,10 @@ export default function country({ countryData }) {
           <span className="px-5">Back</span>
         </button>
       </Link>
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2">
+
+      <div className=" mt-20 grid grid-cols-1 md:grid-cols-2">
         <img
-          className=" object-cover h-full w-full max-h-96"
+          className=" object-cover h-full w-full"
           src={countryData.flags.svg}
           alt="country flag"
         ></img>
@@ -96,15 +97,13 @@ export default function country({ countryData }) {
                     Object.keys(countryData.languages).map((c, idx) => {
                       if (idx === Object.keys(countryData.languages).length - 1)
                         return (
-                          <span key={idx}>{`${
-                            countryData.languages[`${c}`]
-                          }`}</span>
+                          <span key={idx}>{`${countryData.languages[`${c}`]
+                            }`}</span>
                         );
                       else
                         return (
-                          <span key={idx}>{`${
-                            countryData.languages[`${c}`]
-                          }, `}</span>
+                          <span key={idx}>{`${countryData.languages[`${c}`]
+                            }, `}</span>
                         );
                     })}{" "}
                 </p>

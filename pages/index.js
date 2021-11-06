@@ -3,6 +3,7 @@ import Head from "next/head";
 import SearchSection from "../src/components/SearchBar";
 import { getAllData } from "../src/data/data";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const getStaticProps = async (context) => {
   const data = await getAllData();
@@ -52,36 +53,40 @@ const Home = ({ countries }) => {
                     router.push(c.name.common);
                   }}
                 >
-                  <div>
-                    <img
-                      src={c.flags.svg}
-                      className=" rounded-t-lg object-cover w-72 h-40"
-                      alt={`${c.name.common} flag`}
-                    ></img>
-                  </div>
-                  <div className="pt-5 pl-5  h-full">
-                    <label className="font-bold">{c.name.common}</label>
-                    <div className="mt-2">
-                      <span className=" font-semibold text-sm mr-2">
-                        Population
-                      </span>
-                      <span className="text-sm"> {c.population}</span>
-                    </div>
-                    <div className="mt-2">
-                      <span className=" font-semibold text-sm mr-2">
-                        Region
-                      </span>
-                      <span className="text-sm">{c.region}</span>
-                    </div>
-                    <div className="mt-2">
-                      <span className=" font-semibold text-sm mr-2">
-                        Capital
-                      </span>
-                      <span className="text-sm">
-                        {capitals === undefined ? "" : capitals.toString()}
-                      </span>
-                    </div>
-                  </div>
+                  <Link href={`/${c.name.common}`}>
+                    <>
+                      <div>
+                        <img
+                          src={c.flags.svg}
+                          className=" rounded-t-lg object-cover w-72 h-40"
+                          alt={`${c.name.common} flag`}
+                        ></img>
+                      </div>
+                      <div className="pt-5 pl-5  h-full">
+                        <label className="font-bold">{c.name.common}</label>
+                        <div className="mt-2">
+                          <span className=" font-semibold text-sm mr-2">
+                            Population
+                          </span>
+                          <span className="text-sm"> {c.population}</span>
+                        </div>
+                        <div className="mt-2">
+                          <span className=" font-semibold text-sm mr-2">
+                            Region
+                          </span>
+                          <span className="text-sm">{c.region}</span>
+                        </div>
+                        <div className="mt-2">
+                          <span className=" font-semibold text-sm mr-2">
+                            Capital
+                          </span>
+                          <span className="text-sm">
+                            {capitals === undefined ? "" : capitals.toString()}
+                          </span>
+                        </div>
+                      </div>
+                    </>
+                  </Link>
                 </div>
               );
             }
