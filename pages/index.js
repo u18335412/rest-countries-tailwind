@@ -4,7 +4,7 @@ import SearchSection from "../src/components/SearchBar";
 import { getAllData } from "../src/data/data";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+const { motion, AnimatePresence } = require("framer-motion");
 
 export const getStaticProps = async (context) => {
   const data = await getAllData();

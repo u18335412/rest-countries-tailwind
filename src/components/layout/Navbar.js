@@ -1,6 +1,6 @@
 import { HiOutlineMoon } from "react-icons/hi";
 import { MdOutlineLightMode } from "react-icons/md";
-import { motion, AnimatePresence } from "framer-motion";
+const { motion, AnimatePresence } = require("framer-motion");
 
 const Navbar = (props) => {
   return (
