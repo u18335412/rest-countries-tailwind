@@ -21,66 +21,66 @@ export default function country({ countryData }) {
   const capitals = countryData.capital;
   const tld = countryData.tld;
   return (
-    <div className="px-5 2xl:px-28 pt-10 dark:bg-veryDarkBlue dark:text-white min-h-screen max-h-full ">
+    <div className="max-h-full min-h-screen px-5 pt-10 2xl:px-28 dark:bg-veryDarkBlue dark:text-white ">
       <Link href="/" passHref>
-        <button className="px-5 py-2  rounded flex  dark:bg-grayishDarkBlue  items-center shadow-md hover:ring ring-green-100">
+        <button className="flex items-center px-5 py-2 rounded shadow-md dark:bg-grayishDarkBlue hover:ring ring-green-100">
           <BsArrowLeft></BsArrowLeft>
           <span className="px-5">Back</span>
         </button>
       </Link>
 
-      <div className=" mt-20 grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 mt-20 md:grid-cols-2">
         <img
-          className=" object-cover h-full w-full max-h-96"
+          className="object-cover w-full h-full max-h-96"
           src={countryData.flags.svg}
           alt="country flag"
         ></img>
-        <div className="xl:pl-16 xl:pb-0 md:p-4 pt-7 flex flex-col justify-center">
-          <p className="text-2xl mb-5 md font-bold">
+        <div className="flex flex-col justify-center xl:pl-16 xl:pb-0 md:p-4 pt-7">
+          <p className="mb-5 text-2xl font-bold md">
             {countryData.name.common}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 ">
             <div className="flex flex-col gap-2 ">
-              <p className=" font-semibold">
+              <p className="font-semibold ">
                 Native Name:
                 <span className="text-sm font-normal">
                   <span className="mr-1">{` ${countryData.name.common}`}</span>
                 </span>
               </p>
-              <p className=" font-semibold ">
+              <p className="font-semibold ">
                 Population:
-                <span className="text-s font-normal">
+                <span className="font-normal text-s">
                   {` ${countryData.population.toLocaleString(undefined, {
                     minimumFractionDigits: 0,
                   })}`}
                 </span>
               </p>
-              <p className=" font-semibold">
+              <p className="font-semibold ">
                 Region:{" "}
                 <span className="text-sm font-normal">
                   {` ${countryData.region}`}
                 </span>{" "}
               </p>
-              <p className=" font-semibold">
+              <p className="font-semibold ">
                 Subregion:
                 <span className="text-sm font-normal">
                   {countryData.subregion && ` ${countryData.subregion}`}
                 </span>
               </p>
               <p>
-                <label className=" font-semibold">Capital:</label>
+                <label className="font-semibold ">Capital:</label>
                 {capitals === undefined ? "" : ` ${capitals.toString()}`}
               </p>
             </div>
             <div className="mt-10 md:mt-0">
-              <div className=" flex gap-2 flex-col  md:float-right xl:float-none">
-                <p className=" font-semibold">
+              <div className="flex flex-col gap-2 md:float-right xl:float-none">
+                <p className="font-semibold ">
                   Top Level Domain:
                   <span className="text-sm font-normal">
                     {tld === undefined ? "" : ` ${tld.toString()}`}
                   </span>
                 </p>
-                <p className=" font-semibold">
+                <p className="font-semibold ">
                   Currencies:
                   {countryData.currencies &&
                     Object.keys(countryData.currencies).map((c, idx) => {
@@ -92,26 +92,28 @@ export default function country({ countryData }) {
                     })}
                 </p>
                 <p>
-                  <span className=" font-semibold pr-1">Languages:</span>
+                  <span className="pr-1 font-semibold ">Languages:</span>
                   {countryData.languages &&
                     Object.keys(countryData.languages).map((c, idx) => {
                       if (idx === Object.keys(countryData.languages).length - 1)
                         return (
-                          <span key={idx}>{`${countryData.languages[`${c}`]
-                            }`}</span>
+                          <span key={`${countryData.languages[`${c}`]}`}>{`${
+                            countryData.languages[`${c}`]
+                          }`}</span>
                         );
                       else
                         return (
-                          <span key={idx}>{`${countryData.languages[`${c}`]
-                            }, `}</span>
+                          <span key={`${countryData.languages[`${c}`]}`}>{`${
+                            countryData.languages[`${c}`]
+                          }, `}</span>
                         );
                     })}{" "}
                 </p>
               </div>
             </div>
           </div>
-          <div className="mt-10 flex flex-wrap items-center dark:bg-veryDarkBlue">
-            <span className="font-semibold mr-2 w-full md:w-auto">
+          <div className="flex flex-wrap items-center mt-10 dark:bg-veryDarkBlue">
+            <span className="w-full mr-2 font-semibold md:w-auto">
               Bordered Countries:
             </span>
             {countryData.neighbors.map((c, idx) => {
@@ -119,10 +121,10 @@ export default function country({ countryData }) {
                 <Link
                   href={`/${c.name.common}`}
                   passHref
-                  key={idx}
+                  key={`${c.name.common}+link`}
                   className="inline "
                 >
-                  <span className="dark:bg-grayishDarkBlue mt-1 text-sm px-3 py-1 shadow-md mr-2 cursor-pointer hover:shadow-xl rounded-md">
+                  <span className="px-3 py-1 mt-1 mr-2 text-sm rounded-md shadow-md cursor-pointer dark:bg-grayishDarkBlue hover:shadow-xl">
                     {c.name.common}
                   </span>
                 </Link>
