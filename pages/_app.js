@@ -1,7 +1,7 @@
 import "tailwindcss/tailwind.css";
 import Head from "next/head";
 import Navbar from "../src/components/layout/Navbar";
-import cookieCutter from 'cookie-cutter'
+import cookieCutter from "cookie-cutter";
 import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   };
 
   return (
-    <div className={theme}>
+    <div className={`${theme} transition-all`}>
       <Navbar toggleTheme={toggleTheme} theme={theme}></Navbar>
       <Component {...pageProps} />
     </div>
