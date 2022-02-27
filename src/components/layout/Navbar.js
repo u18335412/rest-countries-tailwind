@@ -5,7 +5,7 @@ const { motion, AnimatePresence } = require("framer-motion");
 const Navbar = (props) => {
   return (
     <>
-      <section className="flex items-center justify-between px-5 py-3 text-xs shadow-md dark:bg-grayishDarkBlue dark:text-white 2xl:px-28 md:text-base justify-items-center">
+      <section className="flex items-center justify-between px-5 py-3 text-xs shadow-md dark:bg-grayishDarkBlue bg dark:text-white 2xl:px-28 md:text-base justify-items-center">
         <div>
           <label className="text-xs font-bold md:text-xl">
             Where in the world?
