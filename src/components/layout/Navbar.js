@@ -14,7 +14,7 @@ const Navbar = (props) => {
         <div>
           <div
             onClick={props.toggleTheme}
-            className="flex items-center justify-center py-3 rounded-md hover:cursor-pointer"
+            className="flex items-center justify-center px-3 py-3 transition-all rounded-lg hover:cursor-pointer dark:hover:bg-veryDarkBlue hover:bg-gray-200"
           >
             <AnimatePresence>
               {props.theme === "light" && (
@@ -39,7 +39,7 @@ const Navbar = (props) => {
                   initial={{ scale: 0 }}
                  
                 >
-                  <MdOutlineLightMode></MdOutlineLightMode>
+                  <MdOutlineLightMode className="w-5 h-5"></MdOutlineLightMode>
                 </motion.span>
               )}
             </AnimatePresence>
