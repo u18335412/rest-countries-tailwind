@@ -52,7 +52,7 @@ export default function country({ countryData }) {
                 <span className="font-normal text-s">
                   {` ${countryData.population.toLocaleString(undefined, {
                     minimumFractionDigits: 0,
-                  })}`}
+                  })}` }
                 </span>
               </p>
               <p className="font-semibold ">
