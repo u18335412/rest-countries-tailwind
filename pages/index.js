@@ -16,11 +16,10 @@ export const getStaticProps = async (context) => {
 function Country({ c }) {
   return (
     <Link href={`/${c.name.common}`}>
-      <motion.div
+      <div
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         exit={{ opacity: 0.5 }}
-        layout
         className="flex flex-col pb-10 mt-5 mb-5 transition-shadow rounded-t-lg shadow-lg cursor-pointer dark:bg-grayishDarkBlue hover:shadow-2xl h-5/6 w-12/12 md:w-3/3 lg:w-4/4"
       >
         <div>
@@ -47,7 +46,7 @@ function Country({ c }) {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 }
@@ -99,16 +98,16 @@ const Home = ({ countries }) => {
           input={searchValue}
           update={handleChange}
         ></SearchSection>
-        <motion.div
+        <div
           layout
           className="grid mt-5 gap-x-20 place-items-center md:grid-cols-3 lg:grid-cols-4 "
         >
-          <AnimatePresence>
-            {filterd.map((c) => {
-              return <Country key={c.name.common} c={c}></Country>;
-            })}
-          </AnimatePresence>
-        </motion.div>
+          {/* <AnimatePresence> */}
+          {filterd.map((c) => {
+            return <Country key={c.name.common} c={c}></Country>;
+          })}
+          {/* </AnimatePresence> */}
+        </div>
       </div>
     </>
   );
