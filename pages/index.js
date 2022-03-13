@@ -20,7 +20,7 @@ function Country({ c }) {
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         exit={{ opacity: 0.5 }}
-        className="flex flex-col pb-10 mt-5 mb-5 transition-shadow rounded-t-lg shadow-lg cursor-pointer dark:bg-grayishDarkBlue hover:shadow-2xl h-[21rem] w-[16.5rem]"
+        className="flex flex-col pb-10 mt-5 mb-5 transition-shadow rounded-t-lg shadow-lg cursor-pointer dark:bg-grayishDarkBlue hover:shadow-2xl min-h-[21rem] w-[16.5rem]"
       >
         <div>
           <div>
@@ -98,7 +98,7 @@ const Home = ({ countries }) => {
           input={searchValue}
           update={handleChange}
         ></SearchSection>
-        <div layout className="flex justify-center gap-y-[4.688rem] flex-wrap md:gap-x-[4.625rem] md:justify-between mt-12">
+        <div layout className="flex justify-center gap-y-[4.688rem] flex-wrap md:gap-x-[4.625rem] gap-x-10 md:justify-between mt-12">
           {/* <AnimatePresence> */}
           {filterd.map((c) => {
             return <Country key={c.name.common} c={c}></Country>;

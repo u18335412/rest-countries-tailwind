@@ -29,7 +29,7 @@ export default function MunuSelect({ toggle }) {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 w-[12.5rem] mt-1 overflow-hidden origin-top-right h-fit py-4 px-6 bg-white rounded-md shadow-lg dark:bg-grayishDarkBlue ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute right-0 w-[12.5rem] mt-1 overflow-hidden origin-top-right h-fit  bg-white rounded-md shadow-lg dark:bg-grayishDarkBlue ring-1 ring-black ring-opacity-5 focus:outline-none">
             {["Africa", "Americas", "Asia", "Europe", "Oceania", "None"].map((item) => {
               return (
                 <Menu.Item key={item + "menuItem"}>
@@ -40,7 +40,7 @@ export default function MunuSelect({ toggle }) {
                         active
                           ? " bg-grayishDarkBlue dark:bg-white dark:text-black text-white"
                           : "text-gray-900"
-                      } group flex dark:text-white font-bold items-center w-full px-4 py-2 text-sm`}
+                      } group flex dark:text-white font-bold items-center w-full px-6 py-2 text-sm`}
                     >
                       {item}
                     </button>
